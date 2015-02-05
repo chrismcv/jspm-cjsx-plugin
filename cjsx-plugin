@@ -1,7 +1,7 @@
-var CoffeeScript = require('./coffee-script');
+var transform = require('coffee-react-transform');
 
 module.exports = function(name, url, fetch, callback, errback) {
   fetch(url, function(source) {
-    callback(CoffeeScript.compile(source));
+    callback(transform(source));
   }, errback);
 }
